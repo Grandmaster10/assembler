@@ -1,6 +1,6 @@
 # SIMPLEX Assembler & Emulator
 
-A custom two-pass assembler and virtual machine emulator for the 32-bit SIMPLEX instruction set, written in C++17. Built as the final MiniProject for CS2206.
+A custom two-pass assembler and virtual machine emulator for the 32-bit SIMPLEX instruction set, written in C++17. Built as the midsem MiniProject for CS2206.
 
 ## Features
 * **Two-Pass Assembler (`asm.cpp`):** Converts SIMPLEX assembly (`.asm`) into 32-bit machine code. Features robust error diagnostics, advanced `.lst` listing generation, and support for the `SET` pseudo-instruction.
