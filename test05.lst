@@ -1,0 +1,49 @@
+00000000          ; Name : Sarthak Poddar
+00000000          ; Roll : 2401CS25
+00000000          ; I hereby declare that all the code in this file is an original creative property of mine and has not been plagiarised from anywhere unless specified
+00000000          ;
+00000000          ; test05.asm
+00000000          ; Add numbers in an array
+00000000          
+00000000 00100000         ldc 0x1000  ; Assuming 0x1000 to be the start of the stack memory as been done in sample program 4 in the project pdf
+00000001 0000000B         a2sp
+00000002 FFFFFF0A         adj -1
+00000003 00000007         sub         ; to make A = 0
+00000004 00000000         ldc 0       ; to make A = 0, B = 0
+00000005 0000000D         call main
+00000006          ;
+00000006 00000600 main:   ldc n
+00000007 00000003         stl 0       ; SP[0] stores the number of instructions to be executed, i.e. SP[0] = n-1
+00000008 00001F00         ldc array
+00000009 FFFFFF03         stl -1      ; SP[1] stores the pointer to the current element, i.e. SP[1] = i
+0000000A 00000000         ldc 0
+0000000B FFFFFE03         stl -2      ; SP[2] stores the sum of the array elements, i.e. SP[2] = sum
+0000000C          ;
+0000000C 00000002 loop:   ldl 0
+0000000D 00000C0F         brz end 
+0000000E FFFFFF02         ldl -1      ; A = i
+0000000F 00000004         ldnl 0      ; A = array[i]
+00000010 FFFFFE02         ldl -2      ; B = array[i], A = sum
+00000011 00000006         add         ; A = array[i] + sum
+00000012 FFFFFE03         stl -2      ; SP[2] stores the sum of the array elements, i.e. SP[2] = sum
+00000013 FFFFFF02         ldl -1      ; A = i
+00000014 00000101         adc 1       ; A = i + 1
+00000015 FFFFFF03         stl -1      ; SP[1] = i + 1
+00000016 00000002         ldl 0       ; A = SP[0]
+00000017 FFFFFF01         adc -1      ; A = A - 1
+00000018 00000003         stl 0       ; SP[0] = SP[0] - 1
+00000019 FFFFF211         br loop
+0000001A          ;
+0000001A FFFFFE02 end:    ldl -2      ; A = sum
+0000001B 00001F00         ldc array   ; B = sum, A = array[0]
+0000001C 00000605         stnl n      ; array[n] = B
+0000001D 0000010A         adj 1
+0000001E 00000012         HALT
+0000001F          ;
+0000001F          n:      SET 6
+0000001F 00000003 array:  data 3
+00000020 00000007         data 7
+00000021 00000008         data 8
+00000022 0000000A         data 10
+00000023 00000001         data 1
+00000024 0000000F         data 15

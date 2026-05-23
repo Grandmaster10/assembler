@@ -1,0 +1,4 @@
+00000000          val: SET -1
+00000000 FFFFFF00     ldc val 
+00000001 00004201     adc val2
+00000002          val2: SET 66

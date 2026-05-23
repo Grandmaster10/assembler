@@ -1,0 +1,14 @@
+WARNING: Unused label 0badlabel
+WARNING: Unused label lonely
+ERROR AT LINE 4: Bogus Label name
+ERROR AT LINE 6: Duplicate label name
+ERROR AT LINE 7: SET instruction requires a valid label in the same line
+ERROR AT LINE 9: Bogus Mnemonic!
+ERROR AT LINE 10: Unexpected operand!
+ERROR AT LINE 11: Missing operand!
+ERROR AT LINE 13: Not a number
+ERROR AT LINE 14: Not a number
+ERROR AT LINE 15: Not a number
+ERROR AT LINE 17: Extra operand on the end of line
+ERROR AT LINE 18: Extra operand on the end of line
+ERROR AT LINE 20: No such label

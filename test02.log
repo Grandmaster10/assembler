@@ -1,0 +1,11 @@
+WARNING: Unused label 0def
+WARNING: Unused label label
+ERROR AT LINE 4: Duplicate label name
+ERROR AT LINE 5: No such label
+ERROR AT LINE 6: Not a number
+ERROR AT LINE 7: Missing operand!
+ERROR AT LINE 8: Unexpected operand!
+ERROR AT LINE 9: Extra operand on the end of line
+ERROR AT LINE 10: Bogus Label name
+ERROR AT LINE 11: Bogus Mnemonic!
+ERROR AT LINE 12: Bogus Mnemonic!
